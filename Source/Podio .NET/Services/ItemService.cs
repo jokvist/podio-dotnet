@@ -6,6 +6,7 @@ using PodioAPI.Models;
 using PodioAPI.Models.Request;
 using PodioAPI.Utils;
 using System.Threading.Tasks;
+using Range = PodioAPI.Models.Range;
 
 namespace PodioAPI.Services
 {
