@@ -32,7 +32,7 @@ namespace PodioAPI.Services
         /// </param>
         /// <param name="hook">If set to false, hooks will not be executed for the change</param>
         /// <returns>Id of the created item</returns>
-        public async Task<int> AddNewItem(int appId, Item item, int? spaceId = null, bool silent = false, bool hook = true)
+        public async Task<long> AddNewItem(long appId, Item item, int? spaceId = null, bool silent = false, bool hook = true)
         {
             JArray fieldValues = JArray.FromObject(item.Fields.Select(f => new { external_id = f.ExternalId, field_id = f.FieldId, values = f.Values }));
 
@@ -189,7 +189,7 @@ namespace PodioAPI.Services
         ///     If true marks any new notifications on the given item as viewed, otherwise leaves any
         ///     notifications untouched, Default value true
         /// </param>
-        public async Task<Item> GetItem(int itemId, bool markedAsViewed = true)
+        public async Task<Item> GetItem(long itemId, bool markedAsViewed = true)
         {
             string markAsViewdValue = markedAsViewed == true ? "1" : "0";
             var requestData = new Dictionary<string, string>()

@@ -52,7 +52,7 @@ namespace PodioAPI.Services
         ///     "file" and  "profile"
         /// </param>
         /// <returns></returns>
-        public async Task<List<SearchResult>> SearchInApp(int appId, string query, int? limit = null, int offset = 0,
+        public async Task<List<SearchResult>> SearchInApp(long appId, string query, int? limit = null, int offset = 0,
             string refType = null)
         {
             string url = string.Format("/search/app/{0}/", appId);
