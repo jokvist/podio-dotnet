@@ -107,7 +107,7 @@ namespace PodioAPI.Services
         ///     "file" and  "profile"
         /// </param>
         /// <returns></returns>
-        public async Task<List<SearchResult>> SearchInSpace(int spaceId, string query, int? limit = null, int offset = 0,
+        public async Task<List<SearchResult>> SearchInSpace(long spaceId, string query, int? limit = null, int offset = 0,
             string refType = null)
         {
             string url = string.Format("/search/space/{0}/", spaceId);
